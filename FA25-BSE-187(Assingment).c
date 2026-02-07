@@ -43,13 +43,13 @@ int main()
         printf("Weight is :%f\n", person1[i].weight);
         printf("Height is :%f\n", person1[i].height);
     }
-
     // calculate person current age
     int calculate_age[n];
     int max_heartrate[n];
     float min[n];
     float max[n], heart_range[n];
     float bmi[n];
+
     for (int i = 0; i < n; i++)//loop to calculate all functions
     {
         calculate_age[i] = calc_age(person1[i], current_year);
