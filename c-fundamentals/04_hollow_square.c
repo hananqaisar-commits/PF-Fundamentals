@@ -1,0 +1,29 @@
+// Program 04 - Hollow Square
+// Output (n=5):
+// *****
+// *   *
+// *   *
+// *   *
+// *****
+
+#include<stdio.h>
+int main(){
+
+    int n;
+    printf("Enter any number to print Hollow square: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= n; j++)
+        {
+            if (i == 1 || i == n || j == 1 || j == n)
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
