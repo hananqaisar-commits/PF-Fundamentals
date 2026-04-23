@@ -1,54 +1,68 @@
-/*A college offers a course that prepares students for the state licensing exam for realestate brokers. Last year, 10 of the students who completed this course took the licensing examination. Naturally, the college wants to know how well its students did on the
-exam. You’ve been asked to write a program to summarize the results. You’ve been
-given a list of these 10 students. Next to each name a 1 is written if the student passed
-the exam or a 2 if the student failed.*/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
+void table(int size, int result[], int total)
+{
+    int highest = -1;
+    int index = 0;
+    printf("=======Table=======\n");
+    for (int i = 1; i <= size; i++)
+    {
+        printf("%-2d) %-3d marks out of %d\n", i, result[i], total);
+        if (result[i] > highest)
+        {
+            highest = result[i];
+            index = i;
+        }
+    }
+    printf("====================\n");
+    printf("Highest marks in class: %3d\n", highest);
+}
 int main()
 {
 
-    
-    int students, q; // q is fazool
-    int pass = 0;
-    int fail = 0;
-    int num1, num2, pf; // pf mean Pass or Fail
+    int students;
     int i = 1;
     int total;
     int size;
-    
-    srand(time(0));
+    int random;
+    int passNo, failNo = 0;
+
+    srand(time(NULL));
 
     printf("Enter strenght of class:");
     scanf("%d", &size);
 
-    printf("Enter Pass or Fail(1=pass 2=Fail):\n");
-    
+    int result[size];
+
     while (i <= size)
     {
-         pf=(rand()%2)+1;
-        if (pf == 1)
+        random = (rand() % 2) + 1;
+        if (random == 1)
         {
-            pass++;
+
+            result[i] = (rand() % 100) + 1;
+            ++passNo;
         }
-        else if (pf == 2)
+        else if (random == 2)
         {
-            fail++;
+            result[i] = (rand() % 32) + 1;
+            ++failNo;
         }
         else
             printf("Sorry you enter wrong number\n");
         i++;
     }
-    num1 = pass;
-    num2 = fail;
 
-    printf("Total pass student is %d\n", num1);
-    printf("Total fail student is %d\n", num2);
-    printf("Total student was %d\n", num1+num2);
+    table(size, result, 100);
 
-    printf("Thanks for using this programme");
+    printf("Total pass student is %d\n", passNo);
+    printf("Total fail student is %d\n", failNo);
+    printf("Total student was %d\n", passNo + failNo);
+
+    printf("Thanks for using this programme  -=(',')=-\n");
 
     return 0;
 }
