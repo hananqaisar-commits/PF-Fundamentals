@@ -13,19 +13,21 @@ int main()
     printf("BANG!!!!!\n");
     printf("AND TH'RE OFF!!!!!\n\n");
 
-    int haremove=1;
-    int tortmove=1;
+    int haremove = 1;
+    int tortmove = 1;
     int tracing;
     while (haremove < 70 && tortmove < 70)
     {
-         haremove=movehare(haremove);
+        haremove = movehare(haremove);
 
-         tortmove=movetortoise(tortmove);
+        tortmove = movetortoise(tortmove);
 
-        if(haremove<1) haremove=1;
-        if(tortmove<1) tortmove=1;
+        if (haremove < 1)
+            haremove = 1;
+        if (tortmove < 1)
+            tortmove = 1;
 
-        trace(haremove,tortmove);
+        trace(haremove, tortmove);
     }
     return 0;
 }
@@ -58,7 +60,7 @@ int movehare(int move)
 }
 int movetortoise(int move)
 {
-    int m=(rand() % 10) + 1;
+    int m = (rand() % 10) + 1;
     if (m >= 1 && m <= 5)
     {
         return move + 3;
@@ -78,30 +80,25 @@ void trace(int hare, int tort)
     for (int i = 1; i <= 70; i++)
     {
 
-
-        if(i==hare&&i==tort)
+        if (i == hare && i == tort)
             printf("OUCH");
-        else if (i==hare )
+        else if (i == hare)
             printf("H");
-        else if (i==tort)
+        else if (i == tort)
             printf("T");
-            else
-                printf("-");
+        else
+            printf("-");
     }
     puts("");
 
     if (hare >= 70)
-        {
-            printf("Hare Wins!!! YAY!!!\n");
-
-        }
+    {
+        printf("Hare Wins!!! YAY!!!\n");
+    }
     else if (tort >= 70)
-        {
-            printf("Tortoise Wins!!! YAY!!!\n");
-
-        }
-    else if(hare>=70 && tort>=70)
-            printf("Its a tie\n");
-
-
+    {
+        printf("Tortoise Wins!!! YAY!!!\n");
+    }
+    else if (hare >= 70 && tort >= 70)
+        printf("Its a tie\n");
 }
