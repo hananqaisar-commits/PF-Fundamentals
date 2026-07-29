@@ -22,3 +22,5 @@ Compile any file with `gcc file_name.c -o program` and run it with `./program`.
 ### Extracted unit practice
 
 The `unit_02_*`, `unit_03_*`, and `unit_04_*` files were recovered from complete commented programs in the original unit notes. They preserve early versions of factorial, prime, geometry, finance, and loop exercises.
+
+`unit_05_functions_collection.c` is the original Unit 5 program, which combines function exercises such as calculations, number checks, patterns, a billing system, and a simple calculator.
