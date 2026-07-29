@@ -18,7 +18,7 @@ void profile(struct healthcare person1[]);
 int calc_age(struct healthcare personage, int currentyear);
 int heartrate(int current_age);
 void heratrange2(float *min, float *max, int max_heartrate);
-float BMI(float weight,float height);
+float BMI(float weight, float height);
 void displayBMIChart(void);
 
 int main()
@@ -26,10 +26,10 @@ int main()
     printf("Enter numbers of pateints: ");
     scanf("%d", &n);
     int current_year = 2025;
-    struct healthcare person1[n];//i made a array of struct variable 
+    struct healthcare person1[n]; // i made a array of struct variable
 
     // getting input from user
-    profile(person1);// remember i am passing an arrey
+    profile(person1); // remember i am passing an arrey
 
     // for displaying output
     for (int i = 0; i < n; i++)
@@ -50,7 +50,7 @@ int main()
     float max[n], heart_range[n];
     float bmi[n];
 
-    for (int i = 0; i < n; i++)//loop to calculate all functions
+    for (int i = 0; i < n; i++) // loop to calculate all functions
     {
         calculate_age[i] = calc_age(person1[i], current_year);
 
@@ -58,23 +58,22 @@ int main()
         max_heartrate[i] = heartrate(calculate_age[i]);
 
         // to calculate heart beat range minimuin and maximuim
-         heratrange2(&min[i], &max[i], max_heartrate[i]);
+        heratrange2(&min[i], &max[i], max_heartrate[i]);
 
-        //bmi calculator
-        bmi[i]=BMI(person1[i].weight,person1[i].height);
+        // bmi calculator
+        bmi[i] = BMI(person1[i].weight, person1[i].height);
     }
-printf("-------------------Result----------------------");
+    printf("-------------------Result----------------------");
     for (int i = 0; i < n; i++)
     {
         printf("\n%s %s age is: %d\n", person1[i].firstname, person1[i].secondname, calculate_age[i]);
         printf("%s %s heart rate is: %d\n", person1[i].firstname, person1[i].secondname, max_heartrate[i]);
-        printf("%s %s heart rate range min is: %f  and max is %f\n", person1[i].firstname, person1[i].secondname, min[i],max[i]);
-        printf("%s %s BMI is %2f\n", person1[i].firstname, person1[i].secondname,bmi[i]);
+        printf("%s %s heart rate range min is: %f  and max is %f\n", person1[i].firstname, person1[i].secondname, min[i], max[i]);
+        printf("%s %s BMI is %2f\n", person1[i].firstname, person1[i].secondname, bmi[i]);
     }
     puts("");
     displayBMIChart();
 }
-
 
 void profile(struct healthcare person1[])
 {
@@ -112,17 +111,19 @@ int heartrate(int current_age)
 }
 void heratrange2(float *min, float *max, int max_heartrate)
 {
- 
+
     {
         *min = max_heartrate * 0.50;
-        *max = max_heartrate * 0.85;   
+        *max = max_heartrate * 0.85;
     }
 }
-float BMI(float weight,float height){
-    
-    return (weight*703)/(height*height);
+float BMI(float weight, float height)
+{
+
+    return (weight * 703) / (height * height);
 }
-void displayBMIChart(void) {
+void displayBMIChart(void)
+{
     printf("\n----- BMI VALUES -----\n");
     printf("Underweight: less than 18.5\n");
     printf("Normal:      18.5 - 24.9\n");

@@ -2,8 +2,9 @@
 // Overtime: hours > 40 → +200/hour extra
 // Tax: 10% if gross > 50000, else 5%
 
-#include<stdio.h>
-int main(){
+#include <stdio.h>
+int main()
+{
 
     int salary, hours, count, santval;
     char name[50];
@@ -39,10 +40,10 @@ int main(){
 
             net = gross - tax;
 
-            printf("Employee:     %s\n",  name);
-            printf("Gross salary: %d\n",  gross);
-            printf("Tax deducted: %d\n",  tax);
-            printf("Net pay:      %d\n",  net);
+            printf("Employee:     %s\n", name);
+            printf("Gross salary: %d\n", gross);
+            printf("Tax deducted: %d\n", tax);
+            printf("Net pay:      %d\n", net);
 
             allmoney += net;
         }

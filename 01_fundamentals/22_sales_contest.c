@@ -1,8 +1,9 @@
 // Program 22 - Sales Contest (Highest & Lowest Sales)
 // Finds the best and worst performing salesman
 
-#include<stdio.h>
-int main(){
+#include <stdio.h>
+int main()
+{
 
     int sales, a;
     float highest, lowest;
@@ -23,8 +24,10 @@ int main(){
         }
         else
         {
-            if (sales > highest) highest = sales;
-            if (sales < lowest)  lowest  = sales;
+            if (sales > highest)
+                highest = sales;
+            if (sales < lowest)
+                lowest = sales;
         }
     }
 

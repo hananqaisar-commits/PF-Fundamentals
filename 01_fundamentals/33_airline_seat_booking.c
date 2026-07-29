@@ -1,8 +1,9 @@
 // Program - Airline Seat Booking System
 // 5 First Class + 5 Economy seats, auto passport number generation
 
-#include<stdio.h>
-int main(){
+#include <stdio.h>
+int main()
+{
 
     int seatClass;
     int seats[10] = {0};

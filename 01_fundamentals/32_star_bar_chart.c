@@ -1,8 +1,9 @@
 // Program - Star Bar Chart (5 numbers, prints stars equal to input)
 // Output: prints * for each unit of input value
 
-#include<stdio.h>
-int main(){
+#include <stdio.h>
+int main()
+{
 
     int n, i;
 
