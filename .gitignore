@@ -3,3 +3,13 @@
 *.class
 *.sh
 *.git
+
+# Local agent and editor configuration
+.agents/
+.claude/
+.vscode/launch.json
+skills-lock.json
+
+# Vim temporary files
+*.swp
+*.swo
